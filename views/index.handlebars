@@ -1,0 +1,7 @@
+<ul>
+  {{#each burger_data}}
+ {{#unless devoured}}
+ <li>{{this.id}}. {{this.burger_name}}</li>
+ {{/unless}}
+ {{/each}}
+</ul>
