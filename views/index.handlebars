@@ -4,30 +4,32 @@
       <h1>Eat Da Burger</h1>
     </div>
   </div>
+</div>
+<div class="container" id="burger">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <input type="text" class="form-control" name="burger" value="" id="add-burger" placeholder="Add your burger" data-devoured="false">
+        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">Add it!</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
     <div class="row">
       <div class="col"></div>
         {{#each burger_data}}
         {{#unless this.devoured}}
-          <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">Devour!</button>
+          <button type="button" class="btn btn-secondary" data-toggle="button" aria-pressed="false">Devour!</button>
         {{/unless}}
         {{/each}}
       </div>
     <div class="col">
       {{#each burger_data}}
         {{#if this.devoured}}
-          <input class="form-group" type="text" placeholder="{{this.id}}. {{this.burger_name}}">
+          <input class="form-group" type="text" name="burger" data-devoured="false" placeholder="{{this.id}}. {{this.burger_name}}">
         {{/if}}
       {{/each}}
-    </div>
-  </div>
-</div>
-<div class="container" id="burger">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="form-group">
-        <input type="text" class="form-control" name="burger" value="" id="add-burger" placeholder="Add your burger" data-devoured="false">
-        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">Add it!</button>
-    </div>
     </div>
   </div>
 </div>
