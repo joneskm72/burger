@@ -13,13 +13,13 @@ var burger = {
     });
   },
 
-  update: function(id, cb) {
-    var condition = "id=" + id;
-    orm.update("burgers", {devoured: true}, condition, cb)
-    },
+  update: (objColVals, condition, cb) => {
+    console.log("Burger model")
+    orm.update("burgers", objColVals, condition, (res) => {
+      cb(res);
+    });
   }
-
-
+}
 
 // Export the database functions for the controller (burgers_controller.js).
 module.exports = burger;
