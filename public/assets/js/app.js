@@ -5,7 +5,7 @@ $(function() {
     var devoured = $(this).children(".burger_id").attr("data-devoured")
 
     devoured = devoured === "0" ? 1 : 0
-    console.log("ABOUT TO PUT", burger_id, devoured);
+    console.log(burger_id, devoured);
 
     $.ajax({
       method: "PUT",
@@ -19,7 +19,7 @@ $(function() {
   });
 
   $(".create-form").on("submit", function(event) {
-    // Make sure to preventDefault on a submit event.
+    
     console.log("hello");
     event.preventDefault();
 
@@ -28,14 +28,14 @@ $(function() {
       devoured: 0
     };
     console.log(newBurger);
-    // Send the POST request.
+    
     $.ajax("/api/burgers", {
       type: "POST",
       data: newBurger
     }).then(
       function() {
         console.log("created new burger");
-        // Reload the page to get the updated list
+        
         location.reload();
       }
     );
