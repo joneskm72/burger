@@ -1,21 +1,21 @@
 $(function() {
-  $(".devour").on("submit", function(event) {
+  $(".devour-form").on("submit", function(event) {
     event.preventDefault();
-    var id = $(this).data("id");
-    var devoured = $(this).data("id").attr("data-devoured");
+    var burger_id = $(this).children(".burger_id").val();
+    var devoured = $(this).children(".burger_id").attr("data-devoured")
 
     devoured = devoured === "0" ? 1 : 0
+    console.log("ABOUT TO PUT", burger_id, devoured);
 
-
-    $.ajax("/api/burgers/" + id, {
-      type: "PUT",
-      data: devoured
+    $.ajax({
+      method: "PUT",
+      url: "/api/burgers/" + burger_id,
+      data: {devoured:devoured}
     }).then(
       function(data) {
-        console.log(data);
+        console.log("fml", data);
         location.reload();
-      }
-    );
+      });
   });
 
   $(".create-form").on("submit", function(event) {

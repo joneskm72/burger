@@ -19,12 +19,14 @@
 </div>
 <div class="container">
     <div class="row">
-      <div class="col"></div>
+      <div class="col">
         {{#each burger_data}}
         {{#unless this.devoured}}
-          <form class="devour">
-            <button type="submit" class="btn btn-secondary" data-toggle="button" aria-pressed="false">Devour!</button>
-          </form>
+            <form class="devour-form button-size">
+                <span class="burgerList">{{this.id}}. {{this.burger_name}}</span>
+                <input type="hidden" class="burger_id" type="text" data-devoured={{this.devoured}} value={{this.id}}>
+                <button type="submit" class="btn btn-danger">Devour it!</button>
+            </form>
         {{/unless}}
         {{/each}}
       </div>
