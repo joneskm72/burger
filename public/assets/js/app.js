@@ -1,5 +1,5 @@
 $(function() {
-  $(".devour").on("click", function(event) {
+  $(".devour").on("submit", function(event) {
     event.preventDefault();
     var id = $(this).data("id");
     var devoured = $(this).data("id").attr("data-devoured");
@@ -12,7 +12,7 @@ $(function() {
       data: devoured
     }).then(
       function(data) {
-        console.log(data)
+        console.log(data);
         location.reload();
       }
     );
@@ -20,13 +20,14 @@ $(function() {
 
   $(".create-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
+    console.log("hello");
     event.preventDefault();
 
     var newBurger = {
-      name: $("#enter_text").val().trim(),
+      name: $("#add-burger").val().trim(),
       devoured: 0
     };
-
+    console.log(newBurger);
     // Send the POST request.
     $.ajax("/api/burgers", {
       type: "POST",
