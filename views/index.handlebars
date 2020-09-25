@@ -33,7 +33,7 @@
     <div class="col">
       {{#each burger_data}}
         {{#if this.devoured}}
-          <input class="form-group" type="text" name="burger" data-devoured="false" placeholder="{{this.id}}. {{this.burger_name}}">
+          <input class="form-group" type="text" name="burger" data-devoured="false" placeholder="{{this.id}}. {{this.burger_name}}" readonly>
         {{/if}}
       {{/each}}
     </div>
