@@ -13,14 +13,12 @@ $(function() {
       data: {devoured:devoured}
     }).then(
       function(data) {
-        console.log("fml", data);
         location.reload();
       });
   });
 
   $(".create-form").on("submit", function(event) {
     
-    console.log("hello");
     event.preventDefault();
 
     var newBurger = {
